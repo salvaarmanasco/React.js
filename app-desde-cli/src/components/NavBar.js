@@ -4,7 +4,7 @@ function NavBar() {
   return (
 
     <div id="navcontainer">
-        <h1>Marca</h1>
+        <h1>Ahora sí sale el carrito 😎</h1>
         <CartWidget />
         <ul id="lista">
             <li id="active"><a href="#inicio" id="current">Inicio</a></li>

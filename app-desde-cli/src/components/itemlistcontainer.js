@@ -1,11 +1,9 @@
-function ListContainer() {
-    return (
+import ItemList from './ItemList';
 
-      <div id="listcontainer">
-          <h1>¿Esto está bien como greeting?</h1>
-
-      </div>
-    );
-  }
+const ListContainer = ()  =>
+  <div id="listcontainer">
+    <h3>¿Esto está bien como greeting?</h3>
+    <ItemList />
+  </div>
 
 export default ListContainer;
