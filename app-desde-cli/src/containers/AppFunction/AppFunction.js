@@ -32,15 +32,10 @@ import { useState } from "react";
 import ItemCount from "../../components/ItemCount";
 
 const AppFunction = () => {
-    const [stockActual, setearStock] = useState(5);
-    const restarStock = (e, nuevoStock) => {
-        e.preventDefault();
-        setearStock((stockActual) => stockActual - nuevoStock);
-    }
 
     return (
         <div className="AppFunction">
-            <ItemCount stock={stockActual} initial={1} onAdd={restarStock}/>
+            <ItemCount />
         </div>
     );
 };

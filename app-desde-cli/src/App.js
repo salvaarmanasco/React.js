@@ -1,12 +1,13 @@
-import {useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
-import ListContainer from './components/itemlistcontainer';
+import NavBar from './components/Navbar/NavBar';
+import ListContainer from './components/ItemListContainer';
 
 function App() {
-  const [items, setItems] = useState([]);
+  /*const [items, setItems] = useState([]);
 
+  //OJO QUE COMENTÉ LA PROMESA
   useEffect(() => {
     new Promise ((OK, notOK) => {
       setTimeout(() => {
@@ -17,12 +18,13 @@ function App() {
       }
 
   };
+  */
 
 
   return (
     <>
       <NavBar />
-      <ListContainer items={items}/>
+      <ListContainer />
     </>
   );
 

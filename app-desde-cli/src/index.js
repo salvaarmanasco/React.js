@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import AppClass from './containers/AppClass/AppClass';
-import AppFunction from './containers/AppFunction/AppFunction';
+// import AppFunction from './containers/AppFunction/AppFunction';
 // Alternar entre <AppClass /> y <AppFunction /> en el ReactDOM.render()!
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <AppFunction />
   </React.StrictMode>,
   document.getElementById('root')
 );
