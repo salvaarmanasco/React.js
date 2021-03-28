@@ -1,33 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/Navbar/NavBar';
-import ListContainer from './components/ItemListContainer';
+import NavBar from './components/navbar/NavBar';
+import ListContainer from './components/items/ItemListContainer';
 
 function App() {
-  /*const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
-  //OJO QUE COMENTÉ LA PROMESA
   useEffect(() => {
-    new Promise ((OK, notOK) => {
+    new Promise((ok, notOK) => {
       setTimeout(() => {
-        OK(['Fiat Cronos', 'VW Gol Trend', 'Peugeot 308', 'Toyota Corolla'])
-      , 2000;
-    })
-  .then((resultado) => setItems(resultado));
-      }
-
-  };
-  */
-
+        ok(['Fiat Cronos', 'VW Gol Trend', 'Peugeot 308', 'Toyota Corolla']);
+      }, 2000);
+    }).then((resultado) => setItems(resultado));
+  });
 
   return (
-    <>
+    <div className="App">
       <NavBar />
-      <ListContainer />
-    </>
+      <ListContainer items={items} />
+    </div>
   );
-
 }
 
 export default App;

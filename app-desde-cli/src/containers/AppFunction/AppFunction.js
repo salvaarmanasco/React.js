@@ -1,13 +1,10 @@
 /* import {useState, useEffect} from "react";
-
 const AppFunction = () => {
     const [contador, sumarContador] = useState(0);
-
     useEffect( () => {
         console.log('Componente montado.');
         return () => {console.log("El componente será desmontado.");}
     });
-
     console.log("[AppClass.js] Componente renderizado");
         return (
         <div className="App">
