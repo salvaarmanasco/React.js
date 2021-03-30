@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import ItemCount from './ItemCount';
+import ProductData from '../../data/ProductData';
 
-const ListContainer = (props)  => {
+// Se desestructuró items.
+const ListContainer = ()  => {
 
+  //Setear lista y stock
+  const [items, setItems] = useState([]);
   const [stock, setStock] = useState(100);
 
-  const onAdd = (q) => {
-    if (q <= stock) {
-      alert(`Has agregado exitosamente ${q} elementos al carrito.`);
-      setStock(stock - q);
+  // Cargar catálogo asíncrono.
+  // (ok = resolve)
+  useEffect(() => {
+    new Promise((ok, notOK) => {
+      setTimeout(() => {
+        ok(ProductData);
+      }, 2000);
+    }).then((catalogue) => setItems(catalogue));
+  }, []);
+
+  // Funcionamiento del cargador del contador al carrito
+  const add = (qty) => {
+    if (qty <= stock) {
+      alert(`Has agregado exitosamente ${qty} elementos al carrito.`);
+      setStock(stock - qty);
     } else {
       alert('¡Tu demanda supera al stock disponible!');
     };
@@ -18,8 +33,8 @@ const ListContainer = (props)  => {
   return (
   <div id="listcontainer">
     <h3>¡Éste es el contenedor de productos!</h3>
-    <ItemList items={props.items}/>
-    <ItemCount initial = {1} stock={stock} onAdd={onAdd}/>
+    <ItemList items={items}/>
+    <ItemCount initial ={1} stock={stock} onAdd={add}/>
   </div>
   )};
 

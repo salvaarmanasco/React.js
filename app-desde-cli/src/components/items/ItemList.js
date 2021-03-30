@@ -1,14 +1,19 @@
+import { Row } from 'react-bootstrap';
 import Item from './Item';
 
-const ItemList = (props) => (
+// Aquí también se desestructuró items.
+const ItemList = ({items}) => (
     <>
+        <Row>
         <h4> Hola, soy la lista</h4>
-
+        </Row>
+        <Row>
         <ul>
-         {props.items.map((x, index) => (
+         {items.map((x, index) => (
                 <Item key={index} item={x} />
             ))}
         </ul>
+        </Row>
     </>
 );
 
