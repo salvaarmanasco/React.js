@@ -32,7 +32,7 @@ const ListContainer = ()  => {
 
   return (
   <div id="listcontainer">
-    <h3>¡Éste es el contenedor de productos!</h3>
+    <h2>Soy el Contenedor!</h2>
     <ItemList items={items}/>
     <ItemCount initial ={1} stock={stock} onAdd={add}/>
   </div>

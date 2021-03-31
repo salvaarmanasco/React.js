@@ -1,22 +1,40 @@
 import CartWidget from './Cartwidget';
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
+import ListContainer from '../items/ItemListContainer';
+import ItemList from '../items/ItemList';
 
 function NavBar() {
   return (
 
     <div id="navcontainer">
-        <h1>¡Éste es el menú!</h1>
-        <CartWidget />
-        <ul id="lista">
-            <li id="active"><a href="#inicio" id="current">Inicio</a></li>
-            <li><a href="#nosotros">Sobre nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#FAQs">FAQs</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <p>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+      <Router>
+          <NavLink to="/"><h1>Mi Brand!</h1></NavLink>
+          <CartWidget />
+          <ul id="lista">
+              <NavLink to="/category/Productos"> <li>Productos</li> </NavLink>
+              <NavLink to="/category/Blog"> <li>Blog</li> </NavLink>
+              <NavLink to="/category/Nosotros"> <li>Nosotros</li> </NavLink>
+              <NavLink to="/category/FAQs"> <li>Preguntas Frecuentes</li> </NavLink>
+              <NavLink to="/category/Contacto"> <li>Contacto</li> </NavLink>
+
+              <Route exact path="/"><ListContainer /></Route>
+              <Route path="/category/:id"><ItemList /></Route>
+          </ul>
+        </Router>
     </div>
   );
 }
+
+/*
+function Alfa() {
+
+  let { id } = useParams(); // url
+  return (
+    <div>
+      <h1>α</h1>
+      Soy Alfa. {id}
+    </div>
+  );
+}*/
 
 export default NavBar;
